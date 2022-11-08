@@ -1,0 +1,113 @@
+commit 02f73d3a685c6aa958393166195fce58f8ba4fa7
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:33:09 2022 +0200
+
+    tehtävä 11
+
+ tiedostoja/file1             | 0
+ tiedostoja/{file2 => file22} | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7ec31ed5f9e116f062aa212bbcd6d844e48f7b6f
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:30:39 2022 +0200
+
+    tiedostoja
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 1a4cf30184a8c5423657d3a42f809ecf3c452ff7
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:26:04 2022 +0200
+
+    lisää muutoksia
+
+ eka.txt    | 6 ++----
+ kolmas.txt | 2 +-
+ 2 files changed, 3 insertions(+), 5 deletions(-)
+
+commit 5f6b0f6cad109a4a739e373b1253e10b3fe0d788
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:24:02 2022 +0200
+
+    uudellennimeäminen
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit ababddee1b5e853ce3a0dcfc18058615c10872be
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:22:39 2022 +0200
+
+    poisto
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 88b0778cdc22bdd2792ab00c6213ae039468bd5c
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:21:50 2022 +0200
+
+    hei
+
+ tiedosto.txt | 4015 +---------------------------------------------------------
+ 1 file changed, 3 insertions(+), 4012 deletions(-)
+
+commit bccdbd66c9f73d7c69a23e73917df65e56bbee30
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:21:05 2022 +0200
+
+    bee movie
+
+ tiedosto.txt | 4071 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 4070 insertions(+), 1 deletion(-)
+
+commit 87c9b575de1a75f38d71b8d80883e71fe15e3cc3
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:10:46 2022 +0200
+
+    lisää neljäs
+
+ "stuff/nelj\303\244s.txt" | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit cb7affc150e4770e04032aaae73ee969f477d04b
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:09:04 2022 +0200
+
+    muutoksia
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit aef6c99863aded63a2a77beb645a1036edf3b8e8
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:08:36 2022 +0200
+
+    lisää kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 4f9498823a6c73013f2a8715371ae57ec592edc2
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:06:29 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 4023d6554888661c567eeded909b8c1b4366ca43
+Author: Sampo <57003465+realtalin@users.noreply.github.com>
+Date:   Tue Nov 8 17:04:00 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
