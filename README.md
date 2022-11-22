@@ -1,10 +1,14 @@
-# Ohjelmistotekniikan harjoitustyö
+Repositorio kurssin *Ohjelmistotekniikka* harjoitustyötä ja laskareita varten
 
-Repositorio kurssin *Ohjelmistotekniikka* harjoitustyötä varten
+## Laskarit
 
-## Viikko 1
+### Viikko 1
 [komentorivi.txt](https://github.com/realtalin/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 [gitlog.txt](https://github.com/realtalin/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
-Laiton muutos!!!
+# Visuaalimuisti
+
+Visuaalimuisti on yksinkertainen visuaalista muistia testaava peli
+
+[Vaatimusmäärittely](https://github.com/realtalin/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
