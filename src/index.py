@@ -2,14 +2,13 @@ import pygame
 from playfield import Playfield
 
 
-CELL_SIZE = 64
-PLAYFIELD_SIZE = 12
+PLAYFIELD_SIZE = 10
+DISPLAY_SIZE = 800
     
 def main():
-    display_size = CELL_SIZE * PLAYFIELD_SIZE
-    display = pygame.display.set_mode((display_size, display_size))
+    display = pygame.display.set_mode((DISPLAY_SIZE, DISPLAY_SIZE))
 
-    playfield = Playfield(PLAYFIELD_SIZE, CELL_SIZE)
+    playfield = Playfield(PLAYFIELD_SIZE, DISPLAY_SIZE)
 
     pygame.init()
 
@@ -21,6 +20,8 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        #display.fill((170, 170, 170))
+        
         pygame.display.update()
 
     pygame.quit()

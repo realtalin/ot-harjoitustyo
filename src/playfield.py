@@ -2,20 +2,32 @@ import pygame
 from sprites.cell import Cell
 
 
+
 class Playfield():
-    def __init__(self, size, cell_size):
-        self.cell_size = cell_size
+    def __init__(self, size, display_size):
         self.cells = pygame.sprite.Group()
-        self._init_playfield(size)
+        self.playfield = []
+        cell_size = (display_size / size) * 0.9
+        for x in range(size):
+            self.playfield.append([])
+            for y in range(size):
+                x_normalized = x * cell_size * 1.111 + ((display_size / size) * 0.1 / 2)
+                y_normalized = y * cell_size * 1.111 + ((display_size / size) * 0.1 / 2)
+                cell = Cell(cell_size, x_normalized, y_normalized)
+                self.playfield[x].append(cell)
+                self.cells.add(cell)
+
+    def on_click(self, x, y):
+        
+        
+
+    
+
+
+        
     
         
-    def _init_playfield(self, size):
-        for x in range(size):
-            for y in range(size):
-                normalized_x = x * self.cell_size
-                normalized_y = y * self.cell_size
-
-                self.cells.add(Cell(normalized_x, normalized_y))
+    
 
    
 

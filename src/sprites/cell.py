@@ -2,14 +2,21 @@ import pygame
 import os
 
 
-dirname = os.path.dirname(__file__)
+asset_dir = os.path.dirname(__file__)
 
 class Cell(pygame.sprite.Sprite):
-    def __init__(self, x=0, y=0):
+    def __init__(self, size, x, y):
         super().__init__()
 
-        self.image = pygame.image.load(os.path.join(dirname, "..", "assets", "outlined_white_square.png"))
+        image_file = pygame.image.load(os.path.join(asset_dir, "..", "assets", "white_square.png"))
+        self.image = pygame.transform.scale(image_file, (size, size))
         self.rect = self.image.get_rect()
+
         self.rect.x = x
         self.rect.y = y
+
+        self.clicked = False
+
         
+
+
