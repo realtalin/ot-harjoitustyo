@@ -17,31 +17,3 @@ class Playfield():
                 self.playfield[x].append(cell)
                 self.cells.add(cell)
 
-    def on_click(self, x, y):
-        
-        
-
-    
-
-
-        
-    
-        
-    
-
-   
-
-
-    
-
-
-        
-
-            
-
-
-
-
-
-    
-
