@@ -2,7 +2,7 @@ import pygame
 from playfield import Playfield
 
 
-PLAYFIELD_SIZE = 10
+PLAYFIELD_SIZE = 7
 DISPLAY_SIZE = 800
     
 def main():
@@ -12,7 +12,7 @@ def main():
 
     pygame.init()
 
-    playfield.cells.draw(display)
+    
 
     running = True
 
@@ -20,7 +20,9 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        #display.fill((170, 170, 170))
+
+        display.fill((173, 216, 230))
+        playfield.all_sprites.draw(display)
         
         pygame.display.update()
 
