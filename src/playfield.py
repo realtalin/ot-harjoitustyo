@@ -7,7 +7,7 @@ class Playfield():
         self.cells = pygame.sprite.Group()
         self.cell_backgrounds = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
-        self.playfield = []
+        self.playfield_array = []
 
         self._init_cells(size, display_size)
         
@@ -17,7 +17,7 @@ class Playfield():
     
         for x in range(size):
 
-            self.playfield.append([])
+            self.playfield_array.append([])
 
             for y in range(size):
                 # scale x and y to create gap inbetween cells and 
@@ -26,13 +26,10 @@ class Playfield():
                 y_normalized = y * cell_size * (1/0.9) + ((display_size / size) * 0.1 / 2)
 
                 cell = Cell(cell_size, x_normalized, y_normalized)
-                self.playfield[x].append(cell)
+                self.playfield_array[x].append(cell)
                 self.cells.add(cell)
 
                 cell_background = CellBackground(cell_size, x_normalized, y_normalized)
                 self.cell_backgrounds.add(cell_background)
 
-        self.all_sprites.add(self.cells)
-        self.all_sprites.add(self.cell_backgrounds)
-
-    
+        self.all_sprites.add(self.cells, self.cell_backgrounds)
