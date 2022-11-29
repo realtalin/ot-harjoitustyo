@@ -5,13 +5,14 @@ from event_queue import EventQueue
 from renderer import Renderer
 from game_loop import GameLoop
 
-PLAYFIELD_SIZE = 7
+PLAYFIELD_SIZE = 3
 DISPLAY_SIZE = 800
 
 
 def main():
     display = pygame.display.set_mode((DISPLAY_SIZE, DISPLAY_SIZE))
-    pygame.display.set_caption("Visuaalimuisti")
+    pygame.display.set_caption(
+        "Visuaalimuisti: paina SPACE aloittaaksesi uuden pelin")
 
     playfield = Playfield(PLAYFIELD_SIZE, DISPLAY_SIZE)
     clock = Clock()

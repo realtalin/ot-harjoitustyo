@@ -1,3 +1,4 @@
+import random
 import pygame
 
 
@@ -25,3 +26,7 @@ class GameLoop:
                 for cell in self._playfield.cells:
                     if cell.rect.collidepoint(pygame.mouse.get_pos()):
                         cell.click()
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_SPACE:
+                    self._playfield.reset(random.randint(0, 1))
