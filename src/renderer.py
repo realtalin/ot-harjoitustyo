@@ -1,7 +1,8 @@
 import pygame
 
+
 class Renderer():
-    def __init__(self, display, playfield, background_color:tuple):
+    def __init__(self, display, playfield, background_color: tuple):
         self._display = display
         self._playfield = playfield
         self._background_color = background_color
