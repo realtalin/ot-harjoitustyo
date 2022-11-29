@@ -13,15 +13,15 @@ Sovelluksessa on kolme eri näkymää
 
 ## Perustoiminnallisuus
 
-- [] Käyttäjä voi antaa käyttäjänimen
+- [ ] Käyttäjä voi antaa käyttäjänimen
   - Käyttäjänimi toimii kuten monissa vanhoissa PC-peleissä, eli se ei ole sinänsä tunnus, vaan vapaasti valittava nimi
-- [] Käyttäjä voi aloittaa uuden pelin 
+- [ ] Käyttäjä voi aloittaa uuden pelin 
 - [x] Käyttäjä voi pelata muistipeliä
-  - [] Peli loppuu, kun käyttäjä epäonnistuu liian monta kertaa
+  - [ ] Peli loppuu, kun käyttäjä epäonnistuu liian monta kertaa
 - [x] Käyttäjä voi lopettaa pelaamisen kesken
-- [] Käyttäjän saavuttamat tulokset tallentuvat lokaaliin tietokantaan käyttäjänimellä
-- [] Käyttäjä voi katsoa parhaita tuloksia
-
+- [ ] Käyttäjän saavuttamat tulokset tallentuvat lokaaliin tietokantaan käyttäjänimellä
+- [ ] Käyttäjä voi katsoa parhaita tuloksia
+ 
 ## Jatkokehitysideoita
 
 - Pelin parametrit tallennetaan käyttäjän muokattavissa olevaan konfiguraatiotiedostoon
