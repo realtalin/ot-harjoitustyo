@@ -8,7 +8,7 @@ class Playfield():
     def __init__(self, size, display_size, init_time=0):
         self.init_time = init_time
         self.display_size = display_size
-        self.size = size
+        self.size = max(2, size)
         self.cells = pygame.sprite.Group()
         self.correct_cells = pygame.sprite.Group()
         self.cell_backgrounds = pygame.sprite.Group()
@@ -64,10 +64,15 @@ class Playfield():
                 all_correct = False
         return all_correct
 
-    def update(self, current_time):
+    def one_incorrect_clicked(self):
+        one_incorrect = False
         for cell in self.cells:
-            if cell.correct is False and cell.clicked is True:
-                self.reset(random.randint(0, 1), current_time)
+            if cell.clicked is True and cell.correct is False:
+                one_incorrect = True
+        return one_incorrect
+
+    def update(self, current_time):
+        
 
         for cell in self.correct_cells:
             if self.correct_showing_time_left(current_time) > 0 or cell.clicked:
@@ -76,7 +81,12 @@ class Playfield():
             else:
                 cell.set_hidden()
 
-        self.cells.update()
+        if self.one_incorrect_clicked():
+            self.reset(-1, current_time)
 
         if self.all_correct_clicked():
-            self.reset(random.randint(0, 1), current_time)
+            self.reset(1, current_time)
+
+        self.cells.update()
+
+        
