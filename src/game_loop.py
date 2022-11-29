@@ -3,10 +3,11 @@ import pygame
 
 
 class GameLoop:
-    def __init__(self, playfield, clock, event_queue, renderer):
+    def __init__(self, playfield, clock, event_queue, mouse, renderer):
         self._playfield = playfield
         self._clock = clock
         self._event_queue = event_queue
+        self._mouse = mouse
         self._renderer = renderer
 
     def start(self):
@@ -27,9 +28,9 @@ class GameLoop:
             if event.type == pygame.QUIT:
                 return False
 
-            if event.type == pygame.MOUSEBUTTONDOWN and pygame.mouse.get_pressed()[0]:
+            if event.type == pygame.MOUSEBUTTONDOWN and self._mouse.get_pressed()[0]:
                 for cell in self._playfield.cells:
-                    if cell.rect.collidepoint(pygame.mouse.get_pos()):
+                    if cell.rect.collidepoint(self._mouse.get_pos()):
                         cell.click()
 
             if event.type == pygame.KEYDOWN:
