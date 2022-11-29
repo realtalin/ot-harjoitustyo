@@ -20,5 +20,11 @@ class GameLoop:
             if event.type == pygame.QUIT:
                 return False
 
+            if event.type == pygame.MOUSEBUTTONDOWN and pygame.mouse.get_pressed()[0]:
+                for cell in self._playfield.cells:
+                    if cell.rect.collidepoint(pygame.mouse.get_pos()):
+                        cell.click()
+                        
+
                 
 
