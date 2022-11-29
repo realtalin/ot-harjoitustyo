@@ -57,12 +57,26 @@ class Playfield():
     def correct_showing_time_left(self, current_time):
         return 1500 - (current_time - self.init_time)
 
-    def update(self, current_time):
+    def all_correct_clicked(self):
+        all_correct = True
         for cell in self.correct_cells:
-            if self.correct_showing_time_left(current_time) > 0:
+            if cell.clicked is False:
+                all_correct = False
+        return all_correct
+
+    def update(self, current_time):
+        for cell in self.cells:
+            if cell.correct is False and cell.clicked is True:
+                self.reset(random.randint(0, 1), current_time)
+
+        for cell in self.correct_cells:
+            if self.correct_showing_time_left(current_time) > 0 or cell.clicked:
                 cell.set_visible()
 
             else:
                 cell.set_hidden()
 
         self.cells.update()
+
+        if self.all_correct_clicked():
+            self.reset(random.randint(0, 1), current_time)
