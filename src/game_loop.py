@@ -17,8 +17,13 @@ class GameLoop:
             self._renderer.render()
             self._clock.run()
 
+            current_time = self._clock.get_time()
+            self._playfield.update(current_time)
+
     def _handle_events(self):
         for event in self._event_queue.get():
+            current_time = self._clock.get_time()
+
             if event.type == pygame.QUIT:
                 return False
 
@@ -29,4 +34,4 @@ class GameLoop:
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    self._playfield.reset(random.randint(0, 1))
+                    self._playfield.reset(random.randint(0, 1), current_time)

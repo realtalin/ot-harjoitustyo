@@ -7,3 +7,6 @@ class Clock:
 
     def run(self):
         self._clock.tick(60)
+
+    def get_time(self):
+        return pygame.time.get_ticks()

@@ -5,16 +5,18 @@ from sprites.cell import Cell, CellBackground
 
 
 class Playfield():
-    def __init__(self, size, display_size):
+    def __init__(self, size, display_size, init_time=0):
+        self.init_time = init_time
         self.display_size = display_size
         self.size = size
         self.cells = pygame.sprite.Group()
+        self.correct_cells = pygame.sprite.Group()
         self.cell_backgrounds = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
         self.playfield_array = []
 
         self._init_cells()
-        self.generate_correct(size)
+        self.generate_correct(size*2)
 
     def _init_cells(self):
         # 0.9 scale, so cells have space in between
@@ -47,6 +49,20 @@ class Playfield():
             *self.playfield_array)), k=correct_amount)
         for cell in correct:
             cell.correct = True
+            self.correct_cells.add(cell)
 
-    def reset(self, step):
-        self.__init__(self.size + step, self.display_size)
+    def reset(self, step, init_time):
+        self.__init__(self.size + step, self.display_size, init_time)
+
+    def correct_showing_time_left(self, current_time):
+        return 1500 - (current_time - self.init_time)
+
+    def update(self, current_time):
+        for cell in self.correct_cells:
+            if self.correct_showing_time_left(current_time) > 0:
+                cell.set_visible()
+
+            else:
+                cell.set_hidden()
+
+        self.cells.update()
