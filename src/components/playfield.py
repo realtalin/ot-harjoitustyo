@@ -4,7 +4,7 @@ from sprites.cell import Cell, CellBackground
 
 
 class Playfield:
-    def __init__(self, size, display_size, init_time):
+    def __init__(self, size, display_size, init_time=0):
         self.init_time = init_time
         self.size = max(2, size)
         self.display_size = display_size

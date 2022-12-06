@@ -1,5 +1,5 @@
 import pygame
-from components.game import Game
+from services.game import Game
 from services.clock import Clock
 from services.event_queue import EventQueue
 from ui.renderer import Renderer

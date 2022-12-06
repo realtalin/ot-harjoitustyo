@@ -14,14 +14,3 @@ class TestPlayfield(unittest.TestCase):
         playfield = Playfield(5, DISPLAY_SIZE)
 
         self.assertEqual(len(playfield.cells), len(playfield.cell_backgrounds))
-
-    def test_playfield_array_contains_correct_amount_of_cells(self):
-        size = 5
-        playfield = Playfield(size, DISPLAY_SIZE)
-        array_len = 0
-
-        for row in playfield.playfield_array:
-            for cell in row:
-                array_len += 1
-
-        self.assertEqual(len(playfield.cells), array_len)
