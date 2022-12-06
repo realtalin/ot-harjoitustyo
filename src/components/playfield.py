@@ -56,6 +56,7 @@ class Playfield:
     def _correct_showing_time_left(self, current_time):
         if 1500 - (current_time - self.init_time) > 0:
             return True
+        return False
 
     def click_cell(self, mouse_position, current_time):
         if self._correct_showing_time_left(current_time):

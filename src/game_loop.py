@@ -30,3 +30,5 @@ class GameLoop:
 
             if event.type == pygame.MOUSEBUTTONDOWN and self._mouse.get_pressed()[0]:
                 self._game.on_click(self._mouse.get_pos(), current_time)
+
+            return True

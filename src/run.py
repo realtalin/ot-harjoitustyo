@@ -3,9 +3,9 @@ from components.game import Game
 from services.clock import Clock
 from services.event_queue import EventQueue
 from ui.renderer import Renderer
-from game_loop import GameLoop
 from ui.mouse import Mouse
 from ui.menu import MyMenu
+from game_loop import GameLoop
 
 
 DISPLAY_SIZE = 800
