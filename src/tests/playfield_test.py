@@ -4,8 +4,9 @@ from components.playfield import Playfield
 
 DISPLAY_SIZE = 800
 
+
 class TestPlayfield(unittest.TestCase):
-    
+
     def test_amount_of_cells_created_is_size_times_size(self):
         playfield = Playfield(5, DISPLAY_SIZE)
 
@@ -17,7 +18,7 @@ class TestPlayfield(unittest.TestCase):
         self.assertEqual(len(playfield.cells), len(playfield.cell_backgrounds))
 
     def test_correct_cells_not_clicked_if_shown(self):
-        
+
         playfield = Playfield(5, DISPLAY_SIZE)
         for cell in playfield.cells:
             cell.click = Mock()
