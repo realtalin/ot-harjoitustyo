@@ -1,18 +1,15 @@
-import random
 import pygame
 
 
 class GameLoop:
-    def __init__(self, playfield, clock, event_queue, mouse, renderer):
-        self._playfield = playfield
+    def __init__(self, game, clock, event_queue, mouse, renderer):
+        self._game = game
         self._clock = clock
         self._event_queue = event_queue
         self._mouse = mouse
         self._renderer = renderer
 
     def start(self):
-        current_time = self._clock.get_time()
-        self._playfield.init_time = current_time
 
         while True:
             if self._handle_events() is False:
@@ -22,7 +19,7 @@ class GameLoop:
             self._clock.run()
 
             current_time = self._clock.get_time()
-            self._playfield.update_playfield_state(current_time)
+            self._game.update_state(current_time)
 
     def _handle_events(self):
         for event in self._event_queue.get():
@@ -32,8 +29,4 @@ class GameLoop:
                 return False
 
             if event.type == pygame.MOUSEBUTTONDOWN and self._mouse.get_pressed()[0]:
-                self._playfield.click_cell(self._mouse.get_pos(), current_time)
-
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
-                    self._playfield.reset(random.randint(0, 1), current_time)
+                self._game.on_click(self._mouse.get_pos(), current_time)
