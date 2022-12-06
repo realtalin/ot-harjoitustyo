@@ -22,6 +22,7 @@ class GameLoop:
             self._game.update_state(current_time)
 
     def _handle_events(self):
+
         for event in self._event_queue.get():
             current_time = self._clock.get_time()
 
@@ -31,4 +32,4 @@ class GameLoop:
             if event.type == pygame.MOUSEBUTTONDOWN and self._mouse.get_pressed()[0]:
                 self._game.on_click(self._mouse.get_pos(), current_time)
 
-            return True
+        return True
