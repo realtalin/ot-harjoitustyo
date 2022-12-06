@@ -7,4 +7,5 @@
 | 29.11. | 1h    | cell background ja playfieldin testaus |
 | 29.11. | 4h    | oikeat sekä väärä vastaukset, uusien tasojen luominen |
 | 29.11. | 1h    | dokumentaatio |
-| yhteensä | 13h    |  |
+| 6.12. | 4h    | refaktorointi ja menu, dokumentaatio |
+| yhteensä | 17h    |  |
