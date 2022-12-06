@@ -10,3 +10,8 @@
 - Käyttäjällä on 1,5 sekuntia aikaa muistaa oikeiden ruutujen sijainti
 - Jos käyttäjä painaa kaikkia oikeita ruutuja, alkaa uusi taso, joka on yhden suurempi
 - Jos käyttäjä painaa yhtäkin väärää ruutua, alkaa uusi taso, joka on yhden pienempi
+
+### Viikko 5
+
+- Pelillä on yksinkertainen menu, josta voi aloittaa uuden pelin
+- Käyttäjä voi palata menuun pelistä painamalla raksia
