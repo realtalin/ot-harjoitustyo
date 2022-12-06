@@ -1,5 +1,6 @@
 from components.playfield import Playfield
 
+# TODO: fix bug where the first playfield's init_time is set incorrectly
 
 class Game:
     def __init__(self, display_size):
