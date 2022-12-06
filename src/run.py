@@ -5,6 +5,7 @@ from services.event_queue import EventQueue
 from ui.renderer import Renderer
 from game_loop import GameLoop
 from ui.mouse import Mouse
+from ui.menu import MyMenu
 
 PLAYFIELD_SIZE = 3
 DISPLAY_SIZE = 800
@@ -21,9 +22,12 @@ def main():
     mouse = Mouse()
     renderer = Renderer(display, playfield, (173, 216, 230))
     game_loop = GameLoop(playfield, clock, event_queue, mouse, renderer)
+    
 
     pygame.init()
-    game_loop.start()
+    menu = MyMenu(DISPLAY_SIZE, game_loop.start)
+    menu.mainloop(display)
+
 
 
 if __name__ == "__main__":

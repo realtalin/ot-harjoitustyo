@@ -48,7 +48,6 @@ class Playfield():
         correct = random.choices(list(itertools.chain(
             *self.playfield_array)), k=correct_amount)
         for cell in correct:
-            cell.correct = True
             self.correct_cells.add(cell)
 
     def reset(self, step, init_time):
@@ -56,6 +55,13 @@ class Playfield():
 
     def correct_showing_time_left(self, current_time):
         return 1500 - (current_time - self.init_time)
+
+    def click_cell(self, mouse_position, current_time):
+        if self.correct_showing_time_left(current_time) > 0:
+            return
+        for cell in self.cells:
+            if cell.rect.collidepoint(mouse_position):
+                cell.click()
 
     def all_correct_clicked(self):
         all_correct = True
@@ -67,13 +73,11 @@ class Playfield():
     def one_incorrect_clicked(self):
         one_incorrect = False
         for cell in self.cells:
-            if cell.clicked is True and cell.correct is False:
+            if cell.clicked is True and cell not in self.correct_cells:
                 one_incorrect = True
         return one_incorrect
 
-    def update(self, current_time):
-        
-
+    def update_cell_visibility(self, current_time):
         for cell in self.correct_cells:
             if self.correct_showing_time_left(current_time) > 0 or cell.clicked:
                 cell.set_visible()
@@ -81,6 +85,9 @@ class Playfield():
             else:
                 cell.set_hidden()
 
+    def update_playfield_state(self, current_time):
+        self.update_cell_visibility(current_time)
+        
         if self.one_incorrect_clicked():
             self.reset(-1, current_time)
 

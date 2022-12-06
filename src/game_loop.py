@@ -11,6 +11,9 @@ class GameLoop:
         self._renderer = renderer
 
     def start(self):
+        current_time = self._clock.get_time()
+        self._playfield.init_time = current_time
+
         while True:
             if self._handle_events() is False:
                 break
@@ -19,7 +22,7 @@ class GameLoop:
             self._clock.run()
 
             current_time = self._clock.get_time()
-            self._playfield.update(current_time)
+            self._playfield.update_playfield_state(current_time)
 
     def _handle_events(self):
         for event in self._event_queue.get():
@@ -29,9 +32,7 @@ class GameLoop:
                 return False
 
             if event.type == pygame.MOUSEBUTTONDOWN and self._mouse.get_pressed()[0]:
-                for cell in self._playfield.cells:
-                    if cell.rect.collidepoint(self._mouse.get_pos()):
-                        cell.click()
+                self._playfield.click_cell(self._mouse.get_pos(), current_time)
 
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:

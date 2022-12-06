@@ -18,16 +18,15 @@ class Cell(pygame.sprite.Sprite):
         self.rect.x = row
         self.rect.y = column
 
-        self.hidden = True
+        self._visible = False
         self.clicked = False
-        self.correct = False
 
-    def hide(self):
+    def _hide(self):
         image_file = pygame.image.load(os.path.join(
             asset_dir, "..", "assets", "invisible_square.png"))
         self.image = pygame.transform.scale(image_file, (self.size, self.size))
 
-    def show(self):
+    def _show(self):
         image_file = pygame.image.load(os.path.join(
             asset_dir, "..", "assets", "white_square.png"))
         self.image = pygame.transform.scale(image_file, (self.size, self.size))
@@ -36,16 +35,16 @@ class Cell(pygame.sprite.Sprite):
         self.clicked = True
 
     def update(self):
-        if self.hidden:
-            self.hide()
+        if self._visible:
+            self._show()
         else:
-            self.show()
+            self._hide()
 
     def set_hidden(self):
-        self.hidden = True
+        self._visible = False
 
     def set_visible(self):
-        self.hidden = False
+        self._visible = True
 
 
 class CellBackground(pygame.sprite.Sprite):
