@@ -1,10 +1,10 @@
 import pygame
-from playfield import Playfield
-from clock import Clock
-from event_queue import EventQueue
-from renderer import Renderer
+from components.playfield import Playfield
+from services.clock import Clock
+from services.event_queue import EventQueue
+from ui.renderer import Renderer
 from game_loop import GameLoop
-from mouse import Mouse
+from ui.mouse import Mouse
 
 PLAYFIELD_SIZE = 3
 DISPLAY_SIZE = 800

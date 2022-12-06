@@ -1,5 +1,5 @@
 import unittest
-from playfield import Playfield
+from components.playfield import Playfield
 
 DISPLAY_SIZE = 800
 
