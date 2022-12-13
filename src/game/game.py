@@ -9,21 +9,13 @@ class Game:
         self.score = 0
         self.lives = 3
 
-        self.new_level(5)
-
-    @staticmethod
-    def create_game(display_size):
-        return Game(display_size)
-
-    def on_click(self, mouse_position, time):
-        self.level.click_cell(mouse_position, time)
+    def click(self, mouse_position, time):
+        if not self.level.click(mouse_position, time):
+            self.level_failure()
 
     def update_state(self, time):
         self.update_time(time)
         self.level.update_state(time)
-
-        if self.level.one_incorrect_clicked():
-            self.level_failure()
 
         if self.level.all_correct_clicked():
             self.level_success()
@@ -57,4 +49,4 @@ class Game:
         self.time = time
         self.score = 0
         self.lives = 3
-        self.new_level(5)
+        self.new_level(4)

@@ -6,7 +6,7 @@ asset_dir = os.path.dirname(__file__)
 
 
 class Cell(pygame.sprite.Sprite):
-    def __init__(self, size, row, column):
+    def __init__(self, size, coordinates: tuple):
         self.size = size
         super().__init__()
 
@@ -15,8 +15,8 @@ class Cell(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(image_file, (self.size, self.size))
         self.rect = self.image.get_rect()
 
-        self.rect.x = row
-        self.rect.y = column
+        self.rect.x = coordinates[0]
+        self.rect.y = coordinates[1]
 
         self._visible = False
         self.clicked = False
@@ -48,7 +48,7 @@ class Cell(pygame.sprite.Sprite):
 
 
 class CellBackground(pygame.sprite.Sprite):
-    def __init__(self, size, row, column):
+    def __init__(self, size, coordinates):
         super().__init__()
 
         image_file = pygame.image.load(os.path.join(
@@ -56,5 +56,5 @@ class CellBackground(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(image_file, (size, size))
         self.rect = self.image.get_rect()
 
-        self.rect.x = row
-        self.rect.y = column
+        self.rect.x = coordinates[0]
+        self.rect.y = coordinates[1]

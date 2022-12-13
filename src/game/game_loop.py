@@ -1,4 +1,5 @@
 import pygame
+from game.game import Game
 
 
 class GameLoop:
@@ -31,6 +32,6 @@ class GameLoop:
                 return False
 
             if event.type == pygame.MOUSEBUTTONDOWN and self._mouse.get_pressed()[0]:
-                self._game.on_click(self._mouse.get_pos(), time)
+                self._game.click(self._mouse.get_pos(), time)
 
         return True

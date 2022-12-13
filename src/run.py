@@ -1,11 +1,11 @@
 import pygame
-from services.game import Game
+from game.game import Game
 from services.clock import Clock
 from services.event_queue import EventQueue
 from ui.renderer import Renderer
-from ui.mouse import Mouse
+from services.mouse import Mouse
 from ui.menu import MyMenu
-from game_loop import GameLoop
+from game.game_loop import GameLoop
 
 
 DISPLAY_SIZE = 800
@@ -13,8 +13,7 @@ DISPLAY_SIZE = 800
 
 def main():
     display = pygame.display.set_mode((DISPLAY_SIZE, DISPLAY_SIZE))
-    pygame.display.set_caption(
-        "Visuaalimuisti")
+    pygame.display.set_caption("Visuaalimuisti")
 
     game = Game(DISPLAY_SIZE)
     clock = Clock()
