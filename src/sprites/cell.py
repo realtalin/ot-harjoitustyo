@@ -36,7 +36,6 @@ class Cell(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
         self.rect.x = coordinates[0]
-        print(self.rect.x)
         self.rect.y = coordinates[1]
 
         self._visible = False
