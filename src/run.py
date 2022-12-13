@@ -3,9 +3,9 @@ import pygame
 from game.game import Game
 from game.game_loop import GameLoop
 from services.clock import Clock
-from services.event_queue import EventQueue
-from services.mouse import Mouse
+from ui.event_queue import EventQueue
 from ui.menus import MainMenu
+from ui.mouse import Mouse
 from ui.renderer import Renderer
 
 DISPLAY_SIZE = 800
