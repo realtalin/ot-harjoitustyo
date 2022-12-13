@@ -9,6 +9,7 @@ Visuaalimuisti on yksinkertainen visuaalista muistia testaava peli
 - [Changelog](https://github.com/realtalin/ot-harjoitustyo/blob/master/dokumentaatio/changelog.md)
 - [Tuntikirjanpito](https://github.com/realtalin/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 - [Arkkitehtuuri](https://github.com/realtalin/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+- [Käyttöohje](https://github.com/realtalin/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 ## Julkaisut
 - [Viikko 5](https://github.com/realtalin/ot-harjoitustyo/releases/tag/viikko5)
