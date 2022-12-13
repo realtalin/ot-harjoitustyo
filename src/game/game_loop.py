@@ -1,5 +1,4 @@
 import pygame
-from game.game import Game
 
 
 class GameLoop:
@@ -15,6 +14,9 @@ class GameLoop:
         self._game.reset(self._clock.get_time())
 
         while True:
+            if self._game.game_over():
+                self._renderer.render_fail_menu()
+
             if self._handle_events() is False:
                 break
 

@@ -1,4 +1,5 @@
 import pygame
+from ui.menus import FailMenu
 
 
 class Renderer():
@@ -12,3 +13,7 @@ class Renderer():
         self._game.draw_level(self._display)
 
         pygame.display.update()
+
+    def render_fail_menu(self):
+        menu = FailMenu(self._display.get_width())
+        menu.mainloop(self._display)

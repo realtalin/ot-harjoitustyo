@@ -1,12 +1,12 @@
 import pygame
+
 from game.game import Game
+from game.game_loop import GameLoop
 from services.clock import Clock
 from services.event_queue import EventQueue
-from ui.renderer import Renderer
 from services.mouse import Mouse
-from ui.menu import MyMenu
-from game.game_loop import GameLoop
-
+from ui.menus import MainMenu
+from ui.renderer import Renderer
 
 DISPLAY_SIZE = 800
 
@@ -23,7 +23,7 @@ def main():
     game_loop = GameLoop(game, clock, event_queue, mouse, renderer)
 
     pygame.init()
-    menu = MyMenu(DISPLAY_SIZE, game_loop.start)
+    menu = MainMenu(DISPLAY_SIZE, game_loop.start)
     menu.mainloop(display)
 
 

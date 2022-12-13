@@ -10,7 +10,7 @@ class Game:
         self.lives = 3
 
     def click(self, mouse_position, time):
-        if not self.level.click(mouse_position, time):
+        if self.level.click_on_incorrect_cell(mouse_position, time):
             self.level_failure()
 
     def update_state(self, time):
@@ -32,10 +32,6 @@ class Game:
 
     def level_failure(self):
         self.lives -= 1
-
-        if self.lives <= 0:
-            self.game_over()
-
         self.new_level(self.level.size)
 
     def level_success(self):
@@ -43,7 +39,10 @@ class Game:
         self.new_level(self.level.size + 1)
 
     def game_over(self):
-        print("game over")
+        if self.lives <= 0:
+            return True
+
+        return False
 
     def reset(self, time):
         self.time = time
