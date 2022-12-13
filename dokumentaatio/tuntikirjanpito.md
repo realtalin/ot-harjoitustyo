@@ -9,4 +9,4 @@
 | 29.11. | 1h    | dokumentaatio |
 | 6.12.  | 4h    | refaktorointi ja menu, dokumentaatio |
 | 13.12  | 1h    | elämien ja pisteiden lisäys |
-| yhteensä | 17h    |  |
+| yhteensä | 18h    |  |
