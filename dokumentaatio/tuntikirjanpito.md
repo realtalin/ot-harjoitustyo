@@ -8,5 +8,6 @@
 | 29.11. | 4h    | oikeat sekä väärä vastaukset, uusien tasojen luominen |
 | 29.11. | 1h    | dokumentaatio |
 | 6.12.  | 4h    | refaktorointi ja menu, dokumentaatio |
-| 13.12  | 2h    | elämien ja pisteiden lisäys, refaktorointi |
+| 13.12. | 2h    | elämien ja pisteiden lisäys, refaktorointi |
+| 13.12. | 1h    | game over -näyttö |
 | yhteensä | 19h    |  |
