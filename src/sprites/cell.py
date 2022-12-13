@@ -23,7 +23,8 @@ class Cell(pygame.sprite.Sprite):
 
         Args:
             size (int): Size of the cell in pixels, calculated automatically by Level
-            coordinates (tuple): Tuple of two integers, first is the x coordinate, second is the y coordinate
+            coordinates (tuple): Tuple of two integers.
+                First is the x coordinate, second is the y coordinate
         """
 
         self.size = size
@@ -87,8 +88,9 @@ class CellBackground(pygame.sprite.Sprite):
         """The constructor. Calls pygame sprite constructor.
 
         Args:
-            size (int): Width/height of the background in pixels, calculated automatically by Level
-            coordinates (tuple): Tuple of two integers, first is the x coordinate, second is the y coordinate
+            size (int): Size of the background in pixels, calculated automatically by Level
+            coordinates (tuple): Tuple of two integers.
+                First is the x coordinate, second is the y coordinate
         """
 
         super().__init__()

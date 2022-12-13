@@ -7,10 +7,10 @@ class Level:
     """Class for representing the level, contains all of the cells.
 
     Attributes:
-        init_time (int): Time that the level was initialized and shown to the player at
+        init_time (int): Time that the level was initialized at
         size (int): Width/height of the level
         cells: Pygame sprite group that contains all cells
-        correct_cells: Pygame sprite group that contains all correct cells, that the player needs to click
+        correct_cells: Pygame sprite group that contains all correct cells
         cell_backgrounds: Pygame sprite group that contains all cell backgrounds
         all_sprites: Pygame sprite group that contains all cells and all cell backgrounds
     """
@@ -21,7 +21,8 @@ class Level:
         Args:
             size (int): Width/height of the level
             display_size (int): Width/height of the window
-            init_time (int, optional): Time that the level was initialized and shown to the player at. Defaults to 0.
+            init_time (int, optional): Time that the level was initialized at.
+                Defaults to 0.
         """
         self.init_time = init_time
         self.size = max(2, size)
@@ -102,7 +103,7 @@ class Level:
         self.all_sprites.add(self.cells, self.cell_backgrounds)
 
     def _generate_correct_cells(self, correct_amount):
-        """Chooses a specified amount of random cells to be correct cells that the player needs to click
+        """Chooses a specified amount of random cells to be correct cells
 
         Args:
             correct_amount (int): The amount of correct cells to choose
@@ -163,7 +164,7 @@ class Level:
         return all_correct
 
     def update_cell_visibility(self, time):
-        """Shows cells during correct showing time. 
+        """Shows cells during correct showing time.
         Shows correct clicked cells after showing time. Hides other cells.
 
         Args:

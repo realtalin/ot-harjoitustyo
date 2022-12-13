@@ -36,7 +36,8 @@ class Game:
             self.level_failure()
 
     def update_state(self, time):
-        """Updates the game time and the state of the level. If all correct cells have been clicked, the level succeeds.
+        """Updates the game time and the state of the level.
+        If all correct cells have been clicked, the level succeeds.
 
         Args:
             time (int): The time at the moment of the update
