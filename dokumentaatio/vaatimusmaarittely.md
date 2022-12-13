@@ -15,9 +15,9 @@ Sovelluksessa on kolme eri näkymää
 
 - [ ] Käyttäjä voi antaa käyttäjänimen
   - Käyttäjänimi toimii kuten monissa vanhoissa PC-peleissä, eli se ei ole sinänsä tunnus, vaan vapaasti valittava nimi
-- [x] Käyttäjä voi aloittaa uuden pelin 
+- [x] Käyttäjä voi aloittaa uuden pelin
 - [x] Käyttäjä voi pelata muistipeliä
-  - [ ] Peli loppuu, kun käyttäjä epäonnistuu liian monta kertaa
+  - [x] Peli loppuu, kun käyttäjä epäonnistuu liian monta kertaa
 - [x] Käyttäjä voi lopettaa pelaamisen kesken
 - [ ] Käyttäjän saavuttamat tulokset tallentuvat lokaaliin tietokantaan käyttäjänimellä
 - [ ] Käyttäjä voi katsoa parhaita tuloksia
