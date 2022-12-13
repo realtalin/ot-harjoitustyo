@@ -4,7 +4,25 @@ from sprites.cell import Cell, CellBackground
 
 
 class Level:
+    """Class for representing the level, contains all of the cells.
+
+    Attributes:
+        init_time (int): Time that the level was initialized and shown to the player at
+        size (int): Width/height of the level
+        cells: Pygame sprite group that contains all cells
+        correct_cells: Pygame sprite group that contains all correct cells, that the player needs to click
+        cell_backgrounds: Pygame sprite group that contains all cell backgrounds
+        all_sprites: Pygame sprite group that contains all cells and all cell backgrounds
+    """
+
     def __init__(self, size, display_size, init_time=0):
+        """The constructor. Calls init_cells and generate_correct_cells.
+
+        Args:
+            size (int): Width/height of the level
+            display_size (int): Width/height of the window
+            init_time (int, optional): Time that the level was initialized and shown to the player at. Defaults to 0.
+        """
         self.init_time = init_time
         self.size = max(2, size)
         self.cells = pygame.sprite.Group()
@@ -17,12 +35,42 @@ class Level:
 
     @staticmethod
     def create_level(size, display_size, init_time):
+        """Static method for creating a new level.
+
+        Args:
+            size (int): Width/height of the level
+            display_size (int): Width/height of the window
+            init_time (int): Time that the level was initialized and shown to the player at.
+
+        Returns:
+            A new level object
+        """
         return Level(size, display_size, init_time)
 
     def _calculate_cell_size(self, display_size):
+        """Calculates the cell size based on window size and level size (=amount of cells)
+
+        Args:
+            display_size (int): Width/height of the window
+
+        Returns:
+            Integer for cell size
+        """
         return display_size / self.size * 0.9
 
     def _calculate_cell_coordinates(self, display_size, cell_size, row, column):
+        """Calculates the actual cell coordinates, scaling to leave a gap inbetween the cells
+        and adding a constant to move the cells away from the edge of the window.
+
+        Args:
+            display_size (int): Widht/height of the window
+            cell_size (int): Width/height of the cells
+            row (int): Row of the cell
+            column (int): Column of the cell
+
+        Returns:
+            A tuple of the coordinates of the cell, x first, y second
+        """
         cell_gap = 1/0.9
         level_edge = (display_size / self.size) * 0.05
 
@@ -32,6 +80,11 @@ class Level:
         return (x_coordinate, y_coordinate)
 
     def _init_cells(self, display_size):
+        """Creates cells based on size and coordinates,  and creates backgrounds for all of them.
+
+        Args:
+            display_size (int): Widht/height of the window
+        """
         for row in range(self.size):
 
             for column in range(self.size):
@@ -49,6 +102,11 @@ class Level:
         self.all_sprites.add(self.cells, self.cell_backgrounds)
 
     def _generate_correct_cells(self, correct_amount):
+        """Chooses a specified amount of random cells to be correct cells that the player needs to click
+
+        Args:
+            correct_amount (int): The amount of correct cells to choose
+        """
         cell_list = []
         for cell in self.cells:
             cell_list.append(cell)
@@ -59,11 +117,30 @@ class Level:
             self.correct_cells.add(cell)
 
     def _correct_showing_time_left(self, time):
+        """Returns whether theres still time left for the correct cells
+        to be shown at the start of the level.
+
+        Args:
+            time (int): The current time
+
+        Returns:
+            True, if the cells should still be shown, false if they should be hidden
+        """
         if 2200 - (time - self.init_time) > 0:
             return True
         return False
 
     def click_on_incorrect_cell(self, mouse_position, time):
+        """Handles clicks on cells, checks if an incorrect cell was clicked.
+        Cells cannot be clicked while the correct cells are still being shown.
+
+        Args:
+            mouse_position (tuple): Tuple of x and y coordinate of the click
+            time (int): The time of the click
+
+        Returns:
+            True, if an incorrect cell was clicked after the showing time is over, False otherwise
+        """
         if self._correct_showing_time_left(time):
             return False
         for cell in self.cells:
@@ -74,6 +151,11 @@ class Level:
         return False
 
     def all_correct_clicked(self):
+        """Checks whether all correct cells have been clicked
+
+        Returns:
+            True, if all correct cells have been clicked, False otherwise
+        """
         all_correct = True
         for cell in self.correct_cells:
             if cell.clicked is False:
@@ -81,6 +163,12 @@ class Level:
         return all_correct
 
     def update_cell_visibility(self, time):
+        """Shows cells during correct showing time. 
+        Shows correct clicked cells after showing time. Hides other cells.
+
+        Args:
+            time (int): The current time
+        """
         for cell in self.correct_cells:
             if self._correct_showing_time_left(time) or cell.clicked:
                 cell.set_visible()
@@ -89,5 +177,10 @@ class Level:
                 cell.set_hidden()
 
     def update_state(self, time):
+        """Updates cell visibility
+
+        Args:
+            time (int): The current time
+        """
         self.update_cell_visibility(time)
         self.cells.update()
