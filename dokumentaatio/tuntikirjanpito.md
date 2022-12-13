@@ -10,4 +10,5 @@
 | 6.12.  | 4h    | refaktorointi ja menu, dokumentaatio |
 | 13.12. | 2h    | elämien ja pisteiden lisäys, refaktorointi |
 | 13.12. | 1h    | game over -näyttö |
+| 13.12. | 1h    | docstring |
 | yhteensä | 19h    |  |
