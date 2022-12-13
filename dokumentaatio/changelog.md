@@ -15,3 +15,8 @@
 
 - Pelillä on yksinkertainen menu, josta voi aloittaa uuden pelin
 - Käyttäjä voi palata menuun pelistä painamalla raksia
+
+### Viikko 6
+
+- Pelaaja häviää pelin kolmesta virheklikistä
+- Hävitessä näkyy game over -näyttö

@@ -1,4 +1,6 @@
-# Luokkakaavio
+# Arkkitehtuuri
+
+## Luokkakaavio
 
 ```mermaid
 classDiagram
@@ -10,7 +12,7 @@ classDiagram
   Playfield "1" -- "*" Cell
 ```
       
-# Uuden Tason Luominen
+## Uuden Tason Luominen
 ```mermaid
 sequenceDiagram
   participant GameLoop
