@@ -3,22 +3,25 @@ import pygame
 from sprites.cell import Cell, CellBackground
 
 
-class Playfield:
+class Level:
     def __init__(self, size, display_size, init_time=0):
         self.init_time = init_time
         self.size = max(2, size)
-        self.display_size = display_size
         self.cells = pygame.sprite.Group()
         self.correct_cells = pygame.sprite.Group()
         self.cell_backgrounds = pygame.sprite.Group()
         self.all_sprites = pygame.sprite.Group()
 
-        self._init_cells()
+        self._init_cells(display_size)
         self._generate_correct_cells(size*2)
 
-    def _init_cells(self):
+    @staticmethod
+    def create_level(size, display_size, init_time):
+        return Level(size, display_size, init_time)
+
+    def _init_cells(self, display_size):
         # 0.9 scale, so cells have space in between
-        cell_size = (self.display_size / self.size) * 0.9
+        cell_size = (display_size / self.size) * 0.9
 
         for row in range(self.size):
 
@@ -26,9 +29,9 @@ class Playfield:
                 # scale x and y to create gap inbetween cells and
                 # add constant to move cells from edges of display
                 x_normalized = row * cell_size * \
-                    (1/0.9) + ((self.display_size / self.size) * 0.1 / 2)
+                    (1/0.9) + ((display_size / self.size) * 0.1 / 2)
                 y_normalized = column * cell_size * \
-                    (1/0.9) + ((self.display_size / self.size) * 0.1 / 2)
+                    (1/0.9) + ((display_size / self.size) * 0.1 / 2)
 
                 cell = Cell(cell_size, x_normalized, y_normalized)
                 self.cells.add(cell)
@@ -48,10 +51,6 @@ class Playfield:
 
         for cell in correct:
             self.correct_cells.add(cell)
-
-    @staticmethod
-    def create_playfield(size, display_size, init_time):
-        return Playfield(size, display_size, init_time)
 
     def _correct_showing_time_left(self, current_time):
         if 1500 - (current_time - self.init_time) > 0:

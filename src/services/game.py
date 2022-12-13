@@ -1,30 +1,60 @@
-from components.playfield import Playfield
+from components.level import Level
 
-# TODO: fix bug where the first playfield's init_time is set incorrectly
 
 class Game:
     def __init__(self, display_size):
         self.display_size = display_size
-        self.current_time = 0
-        self.playfield = self.new_playfield(5)
+        self.time = None
+        self.level = None
         self.score = 0
-        self.mistakes = 0
+        self.lives = 3
+
+        self.new_level(5)
+
+    @staticmethod
+    def create_game(display_size):
+        return Game(display_size)
 
     def on_click(self, mouse_position, time):
-        self.playfield.click_cell(mouse_position, time)
+        self.level.click_cell(mouse_position, time)
 
-    def update_state(self, current_time):
-        self.current_time = current_time
-        self.playfield.update_state(current_time)
+    def update_state(self, time):
+        self.update_time(time)
+        self.level.update_state(time)
 
-        if self.playfield.one_incorrect_clicked():
-            self.playfield = self.new_playfield(self.playfield.size-1)
+        if self.level.one_incorrect_clicked():
+            self.level_failure()
 
-        if self.playfield.all_correct_clicked():
-            self.playfield = self.new_playfield(self.playfield.size+1)
+        if self.level.all_correct_clicked():
+            self.level_success()
 
-    def new_playfield(self, size):
-        return Playfield.create_playfield(size, self.display_size, self.current_time)
+    def update_time(self, time):
+        self.time = time
 
-    def draw_playfield(self, display):
-        self.playfield.all_sprites.draw(display)
+    def new_level(self, size):
+        self.level = Level.create_level(
+            size, self.display_size, self.time)
+
+    def draw_level(self, display):
+        self.level.all_sprites.draw(display)
+
+    def level_failure(self):
+        self.lives -= 1
+
+        if self.lives <= 0:
+            self.game_over()
+
+        self.new_level(self.level.size)
+
+    def level_success(self):
+        self.score += 1
+        self.new_level(self.level.size + 1)
+
+    def game_over(self):
+        print("game over")
+
+    def reset(self, time):
+        self.time = time
+        self.score = 0
+        self.lives = 3
+        self.new_level(5)

@@ -9,6 +9,6 @@ class Renderer():
 
     def render(self):
         self._display.fill(self._background_color)
-        self._game.draw_playfield(self._display)
+        self._game.draw_level(self._display)
 
         pygame.display.update()

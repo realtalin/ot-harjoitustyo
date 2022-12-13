@@ -11,6 +11,8 @@ class GameLoop:
 
     def start(self):
 
+        self._game.reset(self._clock.get_time())
+
         while True:
             if self._handle_events() is False:
                 break
@@ -18,18 +20,17 @@ class GameLoop:
             self._renderer.render()
             self._clock.run()
 
-            current_time = self._clock.get_time()
-            self._game.update_state(current_time)
+            self._game.update_state(self._clock.get_time())
 
     def _handle_events(self):
 
         for event in self._event_queue.get():
-            current_time = self._clock.get_time()
+            time = self._clock.get_time()
 
             if event.type == pygame.QUIT:
                 return False
 
             if event.type == pygame.MOUSEBUTTONDOWN and self._mouse.get_pressed()[0]:
-                self._game.on_click(self._mouse.get_pos(), current_time)
+                self._game.on_click(self._mouse.get_pos(), time)
 
         return True
