@@ -12,10 +12,12 @@ Visuaalimuisti on yksinkertainen visuaalista muistia testaava peli
 - [Käyttöohje](https://github.com/realtalin/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
 
 ## Julkaisut
+- [Viikko 6](https://github.com/realtalin/ot-harjoitustyo/releases/tag/viikko6)
 - [Viikko 5](https://github.com/realtalin/ot-harjoitustyo/releases/tag/viikko5)
 
+
 ## Asennus
-1. Asenna ohjelman riippuvuudet komennolla `poetry install`
+- Asenna ohjelman riippuvuudet komennolla `poetry install`
 
 ## Komentorivikomennot
 Pelin käynnistys: `poetry run invoke start`  
