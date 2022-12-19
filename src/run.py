@@ -1,8 +1,8 @@
 import pygame
 
-from game.game import Game
-from game.game_loop import GameLoop
-from services.clock import Clock
+from services.game.game import Game
+from services.game.game_loop import GameLoop
+from services.game.clock import Clock
 from ui.event_queue import EventQueue
 from ui.menus import MainMenu
 from ui.mouse import Mouse

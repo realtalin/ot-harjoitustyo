@@ -1,4 +1,4 @@
-from components.level import Level
+from services.game.level import Level
 
 
 class Game:

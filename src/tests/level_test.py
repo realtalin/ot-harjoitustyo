@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import Mock
-from components.level import Level
+from services.game.level import Level
 
 DISPLAY_SIZE = 800
 
