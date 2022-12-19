@@ -37,15 +37,15 @@ sequenceDiagram
   participant GameLoop
   participant Clock
   participant Game
-  participant Playfield
+  participant Level
   participant Cell
   GameLoop->>Clock: get_time()
-  Clock-->>GameLoop: current_time
-  GameLoop->>Game: update_state(current_time)
-  Game->>Playfield: all_correct_clicked()
-  Playfield-->>Game: True
-  Game->>Playfield: Playfield.create_playfield()
-  Playfield->>Cell: Cell()
-  Cell-->>Playfield: cells
-  Playfield-->>Game: playfield
+  Clock-->>GameLoop: time
+  GameLoop->>Game: update_state(time)
+  Game->>Level: all_correct_clicked()
+  Level-->>Game: True
+  Game->>Level: Level.create_level()
+  Level->>Cell: Cell()
+  Cell-->>Level: cells
+  Level-->>Game: level
 ```
