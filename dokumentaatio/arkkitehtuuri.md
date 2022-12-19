@@ -20,8 +20,8 @@ classDiagram
   GameLoop "1" -- "1" EventQueue
   GameLoop "1" -- "1" Mouse
   GameLoop "1" -- "1" Game
-  Game "1" -- "1" Playfield
-  Playfield "1" -- "*" Cell
+  Game "1" -- "1" Level
+  Level "1" -- "*" Cell
 ```
 
 Game-luokka huolehtii meta-tason pelilogiikasta, joka ei liity yksittäiseen tasoon, kuten pisteiden ja jäljellä olevien elämien laskeminen. Game-olio luo aina uuden Level-olion kun pelaaja läpäisee edellisen. Level koostuu monista Cell-olioista. Level luo oikean vastauksen ja tarkistaa, painaako käyttäjä oikeita soluja vai ei.
