@@ -12,4 +12,5 @@
 | 13.12. | 1h    | game over -näyttö |
 | 13.12. | 1h    | docstring |
 | 13.12. | 1h    | dokumentaatio |
-| yhteensä | 22h    |  |
+| 21.12. | 2h    | elämien ja tuloksen näyttäminen, refaktorointia ja käyttöohjeen päivitys |
+| yhteensä | 24h    |  |
