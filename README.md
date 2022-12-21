@@ -20,7 +20,7 @@ Visuaalimuisti on yksinkertainen visuaalista muistia testaava peli
 - Asenna ohjelman riippuvuudet komennolla `poetry install`
 
 ## Komentorivikomennot
-Pelin käynnistys: `poetry run invoke start`  
-Yksikkötestit: `poetry run invoke test`  
-Testikattavauusraportti: `poetry run invoke coverage-report`  
-Lint-tarkistus: `poetry run invoke lint`  
+- Pelin käynnistys: `poetry run invoke start`  
+- Yksikkötestit: `poetry run invoke test`  
+- Testikattavauusraportti: `poetry run invoke coverage-report`  
+- Lint-tarkistus: `poetry run invoke lint`  
