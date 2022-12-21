@@ -12,6 +12,7 @@ class MainMenu(pygame_menu.Menu):
             display_width (int): The width of the window
             display_height (int): The height of the window
             start_function (func): Function to start the game
+            name_setter (func): Game class method for saving the players name
         """
         self.start_function = start_function
         self.name_setter = name_setter
@@ -29,13 +30,16 @@ class FailMenu(pygame_menu.Menu):
     """Class for the fail menu
     """
 
-    def __init__(self, display_width, display_height):
+    def __init__(self, display_width, display_height, score):
         """The consructor, creates fail menu by calling pygame_menu.Menu's constructor and adding text.
 
         Args:
             display_width (int): The width of the window
             display_height (int): The height of the window
+            score (int): The score the player achieved
         """
+
+        self.score = score
         super().__init__("Game Over", display_width,
                          display_height, theme=pygame_menu.themes.THEME_DARK)
 
@@ -43,3 +47,4 @@ class FailMenu(pygame_menu.Menu):
 
     def add_contents(self):
         self.add.label("GAME OVER")
+        self.add.label(f"Tulos: {self.score}")

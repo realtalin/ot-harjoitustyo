@@ -32,6 +32,9 @@ class Game:
     def get_lives(self):
         return self.lives
 
+    def get_score(self):
+        return self.score
+
     def click(self, mouse_position, time):
         """Handles a mouse click. If an incorrect cell is clicked, the level is failed.
 

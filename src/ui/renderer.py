@@ -47,5 +47,5 @@ class Renderer():
     def render_fail_menu(self):
         """Renders the fail menu, menu.mainloop takes over rendering from Renderer
         """
-        menu = FailMenu(self._display.get_width(), self._display.get_height())
+        menu = FailMenu(self._display.get_width(), self._display.get_height(), self._game.get_score())
         menu.mainloop(self._display)
