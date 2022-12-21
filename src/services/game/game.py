@@ -12,18 +12,25 @@ class Game:
         lives: The amount of failures the player can make before game over
     """
 
-    def __init__(self, display_size):
+    def __init__(self, visual_grid_size):
         """The constructor that creates a new game.
 
         Args:
-            display_size (int): The width/height of the window
+            visual_grid_size (int): The desired size of the level grid in pixels
         """
 
-        self.display_size = display_size
+        self.visual_grid_size = visual_grid_size
+        self.username = None
         self.time = None
         self.level = None
         self.score = 0
         self.lives = 3
+
+    def set_username(self, username):
+        self.username = username
+
+    def get_lives(self):
+        return self.lives
 
     def click(self, mouse_position, time):
         """Handles a mouse click. If an incorrect cell is clicked, the level is failed.
@@ -58,7 +65,7 @@ class Game:
             size (int): Width/height of the level to be created
         """
         self.level = Level.create_level(
-            size, self.display_size, self.time)
+            size, self.visual_grid_size, self.time)
 
     def level_failure(self):
         self.lives -= 1
