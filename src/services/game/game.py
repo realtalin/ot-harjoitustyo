@@ -60,14 +60,6 @@ class Game:
         self.level = Level.create_level(
             size, self.display_size, self.time)
 
-    def draw_level(self, display):
-        """Draws all the cells and cell background of the level, called by renderer.
-
-        Args:
-            display (surface): Pygame surface object
-        """
-        self.level.all_sprites.draw(display)
-
     def level_failure(self):
         self.lives -= 1
         self.new_level(self.level.size)

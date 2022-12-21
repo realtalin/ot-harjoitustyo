@@ -26,7 +26,7 @@ class Renderer():
         """Renders the background and level
         """
         self._display.fill(self._background_color)
-        self._game.draw_level(self._display)
+        self._game.level.all_sprites.draw(self._display)
 
         pygame.display.update()
 
