@@ -12,7 +12,7 @@ class Game:
         lives: The amount of failures the player can make before game over
     """
 
-    def __init__(self, visual_grid_size):
+    def __init__(self, visual_grid_size, score_service):
         """The constructor that creates a new game.
 
         Args:
@@ -20,6 +20,7 @@ class Game:
         """
 
         self.visual_grid_size = visual_grid_size
+        self.score_service = score_service
         self.username = None
         self.time = None
         self.level = None
@@ -34,6 +35,9 @@ class Game:
 
     def get_score(self):
         return self.score
+
+    def save_score(self):
+        self.score_service.save(self.username, self.score)
 
     def click(self, mouse_position, time):
         """Handles a mouse click. If an incorrect cell is clicked, the level is failed.

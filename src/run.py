@@ -1,5 +1,6 @@
 import pygame
 
+from services.database.score_service import score_service
 from services.game.clock import Clock
 from services.game.event_queue import EventQueue
 from services.game.game import Game
@@ -17,7 +18,7 @@ def main():
     display = pygame.display.set_mode((DISPLAY_WIDTH, DISPLAY_HEIGHT))
     pygame.display.set_caption("Visuaalimuisti")
 
-    game = Game(min(DISPLAY_WIDTH, DISPLAY_HEIGHT))
+    game = Game(min(DISPLAY_WIDTH, DISPLAY_HEIGHT), score_service)
     clock = Clock()
     event_queue = EventQueue()
     mouse = Mouse()
