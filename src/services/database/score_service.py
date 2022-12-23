@@ -9,6 +9,9 @@ class ScoreService:
         return self._repository.fetch_all()
 
     def save(self, username, score_int):
+        if score_int <= 0:
+            return False
+
         score = {"username": username, "score": score_int}
 
         return self._repository.save(score)

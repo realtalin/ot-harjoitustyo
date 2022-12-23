@@ -38,7 +38,7 @@ class GameLoop:
         while True:
             if self._game.game_over():
                 self._game.save_score()
-                self._renderer.render_fail_menu()
+                self._renderer.render_fail_menu(self.start, self._game.set_username, self._game.get_username())
 
             if self._handle_events() is False:
                 break

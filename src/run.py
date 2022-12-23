@@ -26,9 +26,8 @@ def main():
     game_loop = GameLoop(game, clock, event_queue, mouse, renderer)
 
     pygame.init()
-    menu = MainMenu(DISPLAY_WIDTH, DISPLAY_HEIGHT,
-                    game_loop.start, game.set_username)
-    menu.mainloop(display)
+    main_menu = MainMenu(display, game_loop.start, game.set_username)
+    main_menu.render_main()
 
 
 if __name__ == "__main__":

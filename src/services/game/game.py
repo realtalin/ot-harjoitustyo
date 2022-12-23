@@ -21,7 +21,7 @@ class Game:
 
         self.visual_grid_size = visual_grid_size
         self.score_service = score_service
-        self.username = None
+        self.username = ""
         self.time = None
         self.level = None
         self.score = 0
@@ -29,6 +29,9 @@ class Game:
 
     def set_username(self, username):
         self.username = username
+
+    def get_username(self):
+        return self.username
 
     def get_lives(self):
         return self.lives

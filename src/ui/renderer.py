@@ -1,5 +1,5 @@
 import pygame
-from ui.menus import FailMenu
+from ui.menus import MainMenu, FailMenu
 
 
 class Renderer():
@@ -40,12 +40,16 @@ class Renderer():
 
         center_horizontal_position = self._display.get_width() / 2
         center_vertical_position = self._display.get_height() - text_rect.height
-        text_rect.center = (center_horizontal_position, center_vertical_position)
-        
+        text_rect.center = (center_horizontal_position,
+                            center_vertical_position)
+
         self._display.blit(text_image, text_rect)
 
-    def render_fail_menu(self):
+    def render_fail_menu(self, start_function, name_setter, username):
         """Renders the fail menu, menu.mainloop takes over rendering from Renderer
         """
-        menu = FailMenu(self._display.get_width(), self._display.get_height(), self._game.get_score())
+
+        main_menu = MainMenu(self._display, start_function, name_setter, username)
+        menu = FailMenu(self._display.get_width(), self._display.get_height(
+        ), self._game.get_score(), main_menu.render_main)
         menu.mainloop(self._display)
