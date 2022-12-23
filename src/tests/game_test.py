@@ -2,13 +2,16 @@ import unittest
 from unittest.mock import Mock
 from services.game.game import Game
 
+
 DISPLAY_SIZE = 800
 
 
 class TestGame(unittest.TestCase):
     
     def test_score_increases_by_one_on_level_success(self):
-        game = Game(DISPLAY_SIZE)
+        score_service = Mock()
+        game = Game(DISPLAY_SIZE, score_service)
+        
         game.time = 5000
         game.new_level(5)
         game.level.all_correct_clicked = Mock(return_value=True)
