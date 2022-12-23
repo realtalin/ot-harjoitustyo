@@ -15,4 +15,4 @@
 | 21.12.   | 2h   | elämien ja tuloksen näyttäminen, refaktorointia ja käyttöohjeen päivitys |
 | 23.12.   | 2h   | tulostietokanta                                                          |
 | 23.12.   | 1h   | tulosnäyttö                                                              |
-| yhteensä | 26h  |                                                                          |
+| yhteensä | 27h  |                                                                          |
