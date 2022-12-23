@@ -13,7 +13,7 @@ class ScoreRepository:
 
         return [{"username": row["username"], "score": row["score"]} for row in rows]
 
-    def save(self, score):
+    def save(self, score: dict):
         cursor = self._connection.cursor()
 
         cursor.execute("INSERT INTO scores (username, score) values (?, ?)",
