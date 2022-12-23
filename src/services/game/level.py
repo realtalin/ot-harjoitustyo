@@ -1,5 +1,7 @@
 import random
+
 import pygame
+
 from sprites.cell import Cell, CellBackground
 
 

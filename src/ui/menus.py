@@ -1,5 +1,7 @@
 import pygame_menu
 
+from services.database.score_service import score_service
+
 
 class MainMenu(pygame_menu.Menu):
     """Class for the main menu
@@ -25,7 +27,10 @@ class MainMenu(pygame_menu.Menu):
 
     def add_contents(self):
         self.add.button("Pelaa", self.start_function)
-        self.add.text_input("Nimi: ", default=self.default_name, maxchar=20, onchange=self.name_setter)
+        self.add.text_input("Nimi: ", default=self.default_name,
+                            maxchar=20, onchange=self.name_setter)
+        scores_menu = ScoresMenu(self._display, self.render_main)
+        self.add.button("Tulokset", scores_menu.render_scores)
 
     def render_main(self):
         self.mainloop(self._display)
@@ -54,3 +59,25 @@ class FailMenu(pygame_menu.Menu):
         self.add.label("GAME OVER")
         self.add.label(f"Tulos: {self.score}")
         self.add.button("Takaisin aloitusnäyttöön", self.render_main)
+
+
+class ScoresMenu(pygame_menu.Menu):
+    def __init__(self, display, render_main):
+
+        self._display = display
+        self.render_main = render_main
+        super().__init__("Visuaalimuisti", self._display.get_width(),
+                         self._display.get_height(), theme=pygame_menu.themes.THEME_BLUE)
+
+        self.add_contents()
+        for score in score_service.fetch_all():
+            self.add_score(score)
+
+    def add_contents(self):
+        self.add.button("Takaisin aloitusnäyttöön", self.render_main)
+
+    def add_score(self, score):
+        self.add.label(f"{score['username']}: {score['score']}")
+
+    def render_scores(self):
+        self.mainloop(self._display)

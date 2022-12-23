@@ -1,5 +1,6 @@
 from database.database_connection import get_connection
 
+
 class ScoreRepository:
     def __init__(self, connection):
         self._connection = connection
@@ -17,10 +18,11 @@ class ScoreRepository:
         cursor = self._connection.cursor()
 
         cursor.execute("INSERT INTO scores (username, score) values (?, ?)",
-        (score["username"], score["score"]))
+                       (score["username"], score["score"]))
 
         self._connection.commit()
-        
+
         return score
+
 
 score_repository = ScoreRepository(get_connection())

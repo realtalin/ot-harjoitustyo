@@ -1,5 +1,6 @@
 import unittest
 from unittest.mock import Mock
+
 from services.game.level import Level
 
 DISPLAY_SIZE = 800

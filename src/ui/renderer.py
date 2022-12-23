@@ -1,5 +1,6 @@
 import pygame
-from ui.menus import MainMenu, FailMenu
+
+from ui.menus import FailMenu, MainMenu
 
 
 class Renderer():
@@ -49,7 +50,8 @@ class Renderer():
         """Renders the fail menu, menu.mainloop takes over rendering from Renderer
         """
 
-        main_menu = MainMenu(self._display, start_function, name_setter, username)
+        main_menu = MainMenu(self._display, start_function,
+                             name_setter, username)
         menu = FailMenu(self._display.get_width(), self._display.get_height(
         ), self._game.get_score(), main_menu.render_main)
         menu.mainloop(self._display)
