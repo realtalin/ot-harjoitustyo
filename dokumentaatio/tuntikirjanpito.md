@@ -13,4 +13,5 @@
 | 13.12. | 1h    | docstring |
 | 13.12. | 1h    | dokumentaatio |
 | 21.12. | 2h    | elämien ja tuloksen näyttäminen, refaktorointia ja käyttöohjeen päivitys |
+| 23.12. | 2h    | tulostietokanta |
 | yhteensä | 24h    |  |
