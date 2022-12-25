@@ -70,11 +70,16 @@ class ScoresMenu(pygame_menu.Menu):
                          self._display.get_height(), theme=pygame_menu.themes.THEME_BLUE)
 
         self.add_contents()
-        for score in score_service.fetch_all():
+
+        for score in self._sorted_scores():
             self.add_score(score)
+
+    def _sorted_scores(self):
+        return sorted(score_service.fetch_all(), key=lambda score: score["score"], reverse=True)
 
     def add_contents(self):
         self.add.button("Takaisin aloitusnäyttöön", self.render_main)
+        self.add.label("Tulokset")
 
     def add_score(self, score):
         self.add.label(f"{score['username']}: {score['score']}")

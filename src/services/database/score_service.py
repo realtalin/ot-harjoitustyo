@@ -12,6 +12,9 @@ class ScoreService:
         if score_int <= 0:
             return False
 
+        if username == "":
+            username = "Nimetön"
+
         score = {"username": username, "score": score_int}
 
         return self._repository.save(score)
