@@ -18,4 +18,5 @@
 | 25.12.   | 3h   | testejä tietokannalle ja pelilogiikalle                                  |
 | 25.12.   | 1h   | import-korjauksia ja tulosten järjestäminen                              |
 | 25.12.   | 1h   | docstring                                                                |
-| yhteensä | 32h  |                                                                          |
+| 25.12.   | 1h   | dokumentaatio                                                            |
+| yhteensä | 33h  |                                                                          |
