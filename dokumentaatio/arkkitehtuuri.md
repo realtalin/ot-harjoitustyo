@@ -5,7 +5,7 @@ Ohjelman pakkausrakenne on seuraavanlainen:
   
 ![pakkausrakenne](./kuvatiedostot/rakennekaavio.png)
 
-__Services__-pakkauksen __Game__-pakkaus sisältää pelilogiikan. __UI__:ssa olevat luokat vastaavat pelin ja menujen piirtämisestä sekä käyttäjän syötteiden lukemisesta. Pakkaus __sprites__ sisältää piirrettävät objektit.
+__Services__-pakkauksen __game__-pakkaus sisältää pelilogiikan. __Database__-pakkaus vastaa tietokantaoperaation rajapinnasta muille luokille, ja __repositories__-pakkaus vastaa itse tietokantaoperaatioista. __UI__:ssa olevat luokat vastaavat pelin ja menujen piirtämisestä. Pakkaus __sprites__ sisältää piirrettävät objektit.
 
 ## Sovelluslogiikka
 

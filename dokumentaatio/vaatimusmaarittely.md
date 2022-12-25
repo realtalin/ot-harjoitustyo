@@ -9,18 +9,18 @@ Sovellus on yksinkertainen peli, jolla voi testata visuaalista muistiaan. Peli t
 Sovelluksessa on kolme eri näkymää
 - [x] Päänäkymä, josta pääsee kahteen alanäkymään:
   - [x] Pelinäkymä
-  - [ ] Parhaat tulokset -näkymä
+  - [x] Tulokset -näkymä
 
 ## Perustoiminnallisuus
 
-- [ ] Käyttäjä voi antaa käyttäjänimen
+- [x] Käyttäjä voi antaa käyttäjänimen
   - Käyttäjänimi toimii kuten monissa vanhoissa PC-peleissä, eli se ei ole sinänsä tunnus, vaan vapaasti valittava nimi
 - [x] Käyttäjä voi aloittaa uuden pelin
 - [x] Käyttäjä voi pelata muistipeliä
   - [x] Peli loppuu, kun käyttäjä epäonnistuu liian monta kertaa
 - [x] Käyttäjä voi lopettaa pelaamisen kesken
-- [ ] Käyttäjän saavuttamat tulokset tallentuvat lokaaliin tietokantaan käyttäjänimellä
-- [ ] Käyttäjä voi katsoa parhaita tuloksia
+- [x] Käyttäjän saavuttamat tulokset tallentuvat lokaaliin tietokantaan käyttäjänimellä
+- [x] Käyttäjä voi katsoa tuloksia
  
 ## Jatkokehitysideoita
 

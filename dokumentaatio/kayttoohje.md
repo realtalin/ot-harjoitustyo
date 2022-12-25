@@ -1,19 +1,27 @@
 # Käyttöohje
 
+Pelin voi ladata GitHubin releases-osiosta.
+
+## Konfigurointi
+Voit halutessasi muuttaa tietokantatiedoston nimeä muutammalla ympäristömuuttujaa juurihakemistossa olevassa tiedostossa ```.env```.
+
+## Pelin asentaminen
+Asenna ensin riippuvuudet ajamalla komento ```poetry install``` juurihakemistossa. Alusta sen jälkeen tietokanta ajamalla komento ```poetry run invoke initialize```.
+
 ## Pelin käynnistäminen
-Pelin voi käynnistää ajamalla komentorivillä komento ```poetry run invoke start```
+Pelin voi käynnistää ajamalla komentorivillä komento ```poetry run invoke start```.
 
 ## Pelin aloittaminen
-Pelin voi aloittaa painamalla aloitusnäytön painiketta _Pelaa._  
+Voit valita käyttäjänimen kirjoittamalla sen nimikenttään. Pääset katsomaan tuloksia painamalla _Tulokset_ painiketta. Pelin voi aloittaa painamalla painiketta _Pelaa._ 
   
 ![mainmenu](./kuvatiedostot/mainmenu.png)
 
 ## Pelin pelaaminen
-Kun aloitat pelin, näät joukon valkoisia ruutuja. Tehtävänäsi on muistaa valkoisten ruutujen sijainti. 
+Kun aloitat pelin, näet joukon valkoisia ruutuja. Tehtävänäsi on muistaa valkoisten ruutujen sijainti. 
   
 ![showncells](./kuvatiedostot/showncells.png)
 
-Valkoiset ruudut katoavat hetken kuluttua ja taso näyttää tyhjältä  
+Valkoiset ruudut katoavat hetken kuluttua ja taso näyttää tyhjältä.
   
 ![hiddencells](./kuvatiedostot/hiddencells.png)
 
@@ -21,7 +29,6 @@ Klikkaa kaikkia kohtia, joissa muistat valkoisen ruudun olleen. Jos klikkaat kai
 Jos taas painat yhtäkin väärää ruutua, menetät elämän, ja voit yrittää saman kokoista tasoa uudelleen. Kun epäonnistut kolme kertaa, peli päättyy.
 
 ## Pelin lopettaminen
-Pääset takaisin päänäyttöön sekä kesken pelin että game over -näytöstä painamalla oikeassa yläkulmassa olevaa raksia. Peli sulkeutuu painamalla raksia päänäytössä.  
+Pääset takaisin päänäyttöön kesken pelin painamalla oikeassa yläkulmassa olevaa raksia. Peli sulkeutuu painamalla raksia päänäytössä.  
 
 ![quitbutton](./kuvatiedostot/quitbutton.png)
-

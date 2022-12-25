@@ -20,3 +20,10 @@
 
 - Pelaaja häviää pelin kolmesta virheklikistä
 - Hävitessä näkyy game over -näyttö
+
+### Loppupalautus
+
+- Pelaaja voi valita käyttäjänimen
+- Pelaajan saavuttama tulos tallentuu tietokantaan
+- Pelaaja voi katsella saavutettuja tuloksia
+- Pelaaja näkee jäljellä olevat elämät pelin aikana
