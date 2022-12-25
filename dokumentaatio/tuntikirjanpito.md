@@ -15,4 +15,5 @@
 | 21.12.   | 2h   | elämien ja tuloksen näyttäminen, refaktorointia ja käyttöohjeen päivitys |
 | 23.12.   | 2h   | tulostietokanta                                                          |
 | 23.12.   | 1h   | tulosnäyttö                                                              |
-| yhteensä | 27h  |                                                                          |
+| 25.12.   | 3h   | testejä tietokannalle ja pelilogiikalle                                  |
+| yhteensä | 30h  |                                                                          |
