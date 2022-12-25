@@ -31,7 +31,7 @@ Luokkia Clock, EventQueue ja Mouse on vain yksi, ja ne injektoidaan GameLoopille
 Seuraava sekvenssikaavio on esimerkki tilanteesta, jossa pelaaja on vastannut edelliseen tasoon oikein, ja luodaan uusi taso.
 
 
-## Uuden Tason Luominen
+## Uuden tason luominen
 ```mermaid
 sequenceDiagram
   participant GameLoop
@@ -48,4 +48,22 @@ sequenceDiagram
   Level->>Cell: Cell()
   Cell-->>Level: cells
   Level-->>Game: level
+```
+
+## Tietojen tallennus
+
+Pelaajien saavuttamat tulokset tallennetaan SQLite-tietokantaan. Tulosten tallennuksessa hyödynnetään Repository-suunnittelumallia. Tulosten tallentamisesta vastaavat ScoreService ja ScoreRepository-luokat.
+
+## Tuloksen tallentaminen
+```mermaid
+sequenceDiagram
+  participant GameLoop
+  participant Game
+  participant ScoreService
+  participant ScoreRepository
+  GameLoop->>Game: game_over()
+  Game-->>GameLoop: True
+  GameLoop->>Game: save_score()
+  Game->>ScoreService: save(game.username, game.score)
+  ScoreService->>ScoreRepository: save(score)
 ```
