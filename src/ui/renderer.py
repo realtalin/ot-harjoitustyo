@@ -34,8 +34,10 @@ class Renderer():
         pygame.display.update()
 
     def render_remaining_lives(self):
+        """Renders the remaining lives under the level grid
+        """
         font = pygame.font.SysFont(None, 72)
-        text = f"Elämiä: {self._game.get_lives()}"
+        text = f"Elämiä: {self._game.lives}"
         text_image = font.render(text, True, (255, 255, 255))
         text_rect = text_image.get_rect()
 
@@ -47,11 +49,10 @@ class Renderer():
         self._display.blit(text_image, text_rect)
 
     def render_fail_menu(self, start_function, name_setter, username):
-        """Renders the fail menu, menu.mainloop takes over rendering from Renderer
+        """Renders the fail menu
         """
 
         main_menu = MainMenu(self._display, start_function,
                              name_setter, username)
-        menu = FailMenu(self._display.get_width(), self._display.get_height(
-        ), self._game.get_score(), main_menu.render_main)
-        menu.mainloop(self._display)
+        fail_menu = FailMenu(self._display, self._game.score, main_menu.render_main)
+        fail_menu.render_fail()

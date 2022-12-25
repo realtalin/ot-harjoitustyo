@@ -27,12 +27,12 @@ class Cell(pygame.sprite.Sprite):
                 First is the x coordinate, second is the y coordinate
         """
 
-        self.size = size
+        self._size = size
         super().__init__()
 
         image_file = pygame.image.load(os.path.join(
             asset_dir, "..", "assets", "invisible_square.png"))
-        self.image = pygame.transform.scale(image_file, (self.size, self.size))
+        self.image = pygame.transform.scale(image_file, (self._size, self._size))
         self.rect = self.image.get_rect()
 
         self.rect.x = coordinates[0]
@@ -46,14 +46,14 @@ class Cell(pygame.sprite.Sprite):
         """
         image_file = pygame.image.load(os.path.join(
             asset_dir, "..", "assets", "invisible_square.png"))
-        self.image = pygame.transform.scale(image_file, (self.size, self.size))
+        self.image = pygame.transform.scale(image_file, (self._size, self._size))
 
     def _show(self):
         """Shows the cell by making the image a white square.
         """
         image_file = pygame.image.load(os.path.join(
             asset_dir, "..", "assets", "white_square.png"))
-        self.image = pygame.transform.scale(image_file, (self.size, self.size))
+        self.image = pygame.transform.scale(image_file, (self._size, self._size))
 
     def click(self):
         self.clicked = True

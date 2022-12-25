@@ -16,4 +16,6 @@
 | 23.12.   | 2h   | tulostietokanta                                                          |
 | 23.12.   | 1h   | tulosnäyttö                                                              |
 | 25.12.   | 3h   | testejä tietokannalle ja pelilogiikalle                                  |
-| yhteensä | 30h  |                                                                          |
+| 25.12.   | 1h   | import-korjauksia ja tulosten järjestäminen                              |
+| 25.12.   | 1h   | docstring                                                                |
+| yhteensä | 32h  |                                                                          |
